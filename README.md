@@ -6,13 +6,13 @@ The files in this repository were used to configure the network depicted below.
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook file may be used to install only certain pieces of it, such as Filebeat.
 
-- (Ansible/dvwa-playbook.yml DVWA Playbook)
-- (Ansible/install-elk.yml Elk Playbook)
-- (Ansible/filebeat-playbook.yml FileBeat Playbook)
-- (Ansible/metricbeat-playbook.yml MetricBeat Playbook)
+- [DVWA Playbook](Ansible/dvwa-playbook.yml)
+- [Elk Playbook](Ansible/install-elk.yml)
+- [FileBeat Playbook](Ansible/filebeat-playbook.yml)
+- [MetricBeat Playbook](Ansible/metricbeat-playbook.yml)
 
 This document contains the following details:
-- Description of the Topologu
+- Description of the Topology
 - Access Policies
 - ELK Configuration
   - Beats in use
@@ -73,7 +73,7 @@ The playbook implements the following tasks:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-(Images/docker-ps.png)
+![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker-ps.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
@@ -101,4 +101,4 @@ SSH into the control node and follow the steps below:
 To download the files for use on my repository use the following commands:
 - <curl -L -O https://github.com/kwelch1440/Project-1/tree/main/Ansible/"file-name"/>
 
-- Run the command <ansible-playbook /etc/ansible/roles/"your-playbook".yml> to download the playbook, update the files, etc.
+- Run the command <ansible-playbook /etc/ansible/roles/"your-playbook".yml> to run the playbook.
