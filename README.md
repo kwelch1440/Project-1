@@ -4,9 +4,12 @@ The files in this repository were used to configure the network depicted below.
 
 ![TODO: Update the path with the name of your diagram](Diagrams/Project-1-Diagram.png)
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook file may be used to install only certain pieces of it, such as Filebeat.
 
-  - _TODO: Enter the playbook file._
+- (Ansible/dvwa-playbook.yml DVWA Playbook)
+- (Ansible/install-elk.yml Elk Playbook)
+- (Ansible/filebeat-playbook.yml FileBeat Playbook)
+- (Ansible/metricbeat-playbook.yml MetricBeat Playbook)
 
 This document contains the following details:
 - Description of the Topologu
@@ -70,7 +73,7 @@ The playbook implements the following tasks:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-(Images/docker_ps.png)
+(Images/docker-ps.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
@@ -83,9 +86,6 @@ We have installed the following Beats on these machines:
 - FileBeat
 - MetricBeat
 
-Using the following command to download the filebeat-config.yml:
-curl https://gist.githubusercontent.com/slape/5cc350109583af6cbe577bbcc0710c93/raw/eca603b72586fbe148c11f9c87bf96a63cb25760/Filebeat > /etc/ansible/filebeat-config.yml
-
 These Beats allow us to collect the following information from each machine:
 - FileBeat automates the process of forwarding and centralizing log data on our Kibana site. This gives us a more intuitive interface to be able to see log data in various charts. You can click here for an example of the data provided.
 - Meanwhile, MetricBeat automates the system resource data in similar charts. This could potentially allow us to prevent an attack that would generate a spike in resources used, such as DDoS.
@@ -95,7 +95,10 @@ In order to use the playbook, you will need to have an Ansible control node alre
 
 SSH into the control node and follow the steps below:
 - Copy the elk_install.yml file to /etc/ansible/roles/elk_install.yml.
-- Update the hosts file to include the attribute, followed by <IP address> ansible_python_interpreter=/usr/bin/python3.
-- Run the playbook, and navigate to "http://<you ELK ip>:5601/app/kibana#/home" to check that the installation worked as expected.
+- Update the hosts file to include the attribute, followed by <<IP address>> ansible_python_interpreter=/usr/bin/python3.
+- Run the playbook, and navigate to "http://<<your ELK ip>>:5601/app/kibana#/home" to check that the installation worked as expected.
 
-Run the command <ansible-playbook /etc/ansible/roles/filebeat_playbook.yml> to download the playbook, update the files, etc.
+To download the files for use on my repository use the following commands:
+- <curl -L -O https://github.com/kwelch1440/Project-1/tree/main/Ansible/"file-name"/>
+
+- Run the command <ansible-playbook /etc/ansible/roles/"your-playbook".yml> to download the playbook, update the files, etc.
